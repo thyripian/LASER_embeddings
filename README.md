@@ -10,7 +10,7 @@
 
 
 #### <center>Notes:</center>
-This python 'module' relies on the Tungsten-Canyon repository and associated Docker Image to run. Failure to clone the repository and build the Docker Image will result in failed attempts to process the data.</br>
+This python module (located in the notebook in the 'python' directory) relies on the Tungsten-Canyon repository and associated Docker Image to run. Failure to clone the repository and build the Docker Image will result in failed attempts to process the data.</br>
 If you have cloned the repository, but are unaware of how to build the Docker Image:</br>
 - Install Docker Desktop (will require a system restart or log-out)
 - Using a Bash terminal (such as GitBASH), navigate to the directory of the cloned repository containing the .dockerfile
