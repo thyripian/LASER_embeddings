@@ -1,5 +1,5 @@
-# docker build -t LASER_embed -f LASER_embed.dockerfile .
-# docker run -it -p 8080:80 LASER_embed
+# docker build -t LASER_embeddings -f LASER_embeddings.dockerfile .
+# docker run -it -p 8080:80 LASER_embeddings
 
 FROM --platform=linux/amd64 ubuntu:jammy
 
