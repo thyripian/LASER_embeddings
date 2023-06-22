@@ -6,7 +6,8 @@
 
 <center><b>Created by:</b></center></br>
 <center>Kevan White, Sr. Data Scientist (thyripian)</center></br></br>
-<center>Release Date: 22 June 2023</center></br>
+<center><b>Release Date:</b></center></br>
+<center>22 June 2023</center></br>
 
 
 #### <center>Notes:</center>
@@ -19,3 +20,4 @@ If you have cloned the repository, but are unaware of how to build the Docker Im
 - Reopen the Bash terminal and navigate back to the same directory.
 - Run the command:   docker run -it -p 8080:80 --gpus 0 LASER_embeddings
 - Once this last command is run, you can start and stop the Docker Image in the Docker Desktop GUI for all future use.</br>
+- <b>ATTENTION:</b> The Docker Image <b>MUST BE RUNNING</b> for the code to work. 
