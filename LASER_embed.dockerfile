@@ -1,9 +1,9 @@
-# docker build -t tungsten-canyon -f tungsten-canyon.dockerfile .
-# docker run -it -p 8080:80 tungsten-canyon
+# docker build -t LASER_embed -f LASER_embed.dockerfile .
+# docker run -it -p 8080:80 LASER_embed
 
 FROM --platform=linux/amd64 ubuntu:jammy
 
-MAINTAINER Edward Ward III <edward.ward@occamsolutions.com>
+MAINTAINER Kevan White (thyripian)
 
 # update and upgrade system dependencies
 ENV DEBIAN_FRONTEND noninteractive
@@ -20,14 +20,14 @@ RUN apt-get -qq -y install \
         cmake
 
 # Add tungsten user and group to sudoers
-RUN useradd -ms /bin/bash tungsten
-RUN echo "tungsten ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN usermod -a -G tungsten tungsten
+RUN useradd -ms /bin/bash LASER_embed
+RUN echo "LASER_embed ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN usermod -a -G LASER_embed LASER_embed
 
-# Swith to tungsten user
+# Swith to LASER_embed user
 WORKDIR /app
-RUN chown -R tungsten:tungsten /app
-USER tungsten
+RUN chown -R LASER_embed:LASER_embed /app
+USER LASER_embed
 
 # download miniconda Python 3.9
 RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh -O miniconda.sh
@@ -66,7 +66,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt --verbose
 
 WORKDIR $LASER
 COPY docker/install_external_tools.sh $LASER/install_external_tools.sh
-RUN sudo chown tungsten:tungsten $LASER/install_external_tools.sh
+RUN sudo chown LASER_embed:LASER_embed $LASER/install_external_tools.sh
 RUN sudo ./install_external_tools.sh
 
 COPY docker/install_models.sh $LASER/install_models.sh
@@ -77,7 +77,7 @@ RUN sudo ./install_models.sh
 # Zero paramaters on download_models.sh will limit downloads to LASER 2 languages
 WORKDIR $MODELS
 COPY docker/download_models.sh $LASER/download_models.sh
-RUN sudo chown tungsten:tungsten $LASER/download_models.sh
+RUN sudo chown LASER_embed:LASER_embed $LASER/download_models.sh
 RUN sudo $LASER/download_models.sh
 
 # Copy app files and test files
@@ -88,7 +88,7 @@ COPY docker/romanize_lc.py $LASER/romanize_lc.py
 COPY docker/text_processing.py $APP/text_processing.py
 COPY docker/embed.sh $APP/embed.sh
 
-RUN sudo chown tungsten:tungsten $APP/decode.py $APP/embed.py \
+RUN sudo chown LASER_embed:LASER_embed $APP/decode.py $APP/embed.py \
     $LASER/romanize_lc.py $APP/text_processing.py $APP/embed.sh
 
 # run test
