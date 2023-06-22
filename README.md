@@ -5,7 +5,7 @@
 ---
 
 <center><b>Created by:<b></center></br>
-<center>Kevan White, Sr. Data Scientist (thyripian)</center></br>
+<center>Kevan White, Sr. Data Scientist (thyripian)</center></br></br>
 <center>Release Date: 22 June 2023</center></br>
 
 
