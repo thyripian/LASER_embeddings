@@ -4,7 +4,7 @@
 ###### <center>+ LangDetect and LangId for sentence-level language detection and NLTK and Stanza for language-specific sentence tokenization.</center>
 ---
 
-<center><b>Created by:<b></center></br>
+<center><b>Created by:</b></center></br>
 <center>Kevan White, Sr. Data Scientist (thyripian)</center></br></br>
 <center>Release Date: 22 June 2023</center></br>
 
